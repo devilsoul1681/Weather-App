@@ -12,7 +12,7 @@ document.querySelector(".mainbutton").addEventListener("click",(e)=>{
     messageThree.textContent="";
     messageSecond.textContent="";
     let value=document.querySelector("input").value;
-    fetch("http://localhost:3000/weather?address="+value).then((response)=>{
+    fetch("/weather?address="+value).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 messageOne.textContent=data.error;

@@ -3,7 +3,7 @@ const express = require('express')
 const ejs=require("ejs");
 const {geocode,getWeather}=require("./utlis.jsx")
 const app = express()
-
+const port=process.env.PORT || 3000
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -83,6 +83,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000.')
 })
